@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bug-tracker-deploy
+  labels:
+    app: bug-tracker
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bug-tracker
+  template:
+    metadata:
+      labels:
+        app: bug-tracker
+
+    spec:
+      containers:
+      - name: bug-tracker-container
+        image: ghcr.io/abhijeet32/bug-tracker:image_tag
+        ports:
+        - containerPort: 3000

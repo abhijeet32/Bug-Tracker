@@ -8,7 +8,7 @@ const navigation = [
   { name: "Features", href: "#features" },
   { name: "Docs", href: "#" },
   { name: "HowItWork", href: "#howitwork" },
-  { name: "GitHub", href: "https://github.com/ankitdeveloper7/Error-Tracker" },
+  { name: "GitHub", href: "https://github.com/abhijeet32/bug-tracker" },
 ];
 
 // #abffe6
