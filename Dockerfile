@@ -1,11 +1,12 @@
-FROM node:22-alpine3.22 AS builder
+FROM node:20-alpine3.18 AS builder
 WORKDIR /app
 COPY package.json yarn.lock* ./
 RUN yarn install --frozen-lockfile
 COPY . .
+ENV NEXT_SHARP_PATH=disabled
 RUN yarn build
 
-FROM node:22-alpine3.22 AS runner
+FROM node:20-alpine3.18 AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 
